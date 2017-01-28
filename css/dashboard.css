@@ -1,0 +1,197 @@
+html, body {
+    height: 100%;
+    padding: 0; 
+    margin: 0;
+    /*background: lightgreen;*/
+    overflow:hidden;
+}
+/*//div { width: 50%; height: 50%; float: left; }*/
+.divHeader { 
+    width: 100%; 
+    height: 11%;  
+    /*6*/
+    float: left; 
+    /*background: #00A982;*/
+}
+.div1 { 
+    width: 60%; 
+    height: 74%; 
+    float: left; 
+    background: #fff;
+    
+}
+.div2 { 
+    width: 40%; 
+    height: 74%; 
+    float: left; 
+    background: #fff;
+}
+.div3 { 
+    width: 60%; 
+    height: 20%; 
+    float: left; 
+    word-wrap: break-word;
+    
+}
+.div4 { 
+    width: 40%; 
+    height: 20%; 
+    float: left; 
+   
+}
+
+.buttonSet {
+    height: 55%;
+    width: 100%;
+    background: red;
+}
+.sonarReportOuter{
+    height: 98%;
+    width: 98%;
+    background: white;
+    /*border: 0.5px solid #cdcdcd; 
+    border-radius: 8px;*/
+    margin: 1%;
+}
+.subheadingDb {
+    background: #fcfcfc;
+    height: 8%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    /*line-height: 37px;*/
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: bold;
+    border-bottom: 0.5px solid #cdcdcd;
+}
+
+.chartArea {
+    width: 55%;
+    height: 100%;
+    float: left;
+}
+
+.chartAreaFile {
+    height: 100%;
+    background: blue;
+    width: 45%;
+    float: left;
+}
+.fileText{
+    color: grey;
+}
+.fileTextNumber{
+    color: black;
+    font-weight: bold;
+}
+.digitDisplay{
+    font-size: 45px;
+    text-shadow: 2px 2px #cdcdcd;
+}
+
+.tableSelect{
+ background-color: lightgreen !important;
+}
+.tableDefault{
+ background-color: transparent;
+}
+.euqal3{
+ width: 100%;
+ height: 33.3%;
+}
+.equalVertical{
+ width: 50%;
+ height: 97%;
+ float: left;
+}
+
+
+
+/*table*/
+.tableOuter{
+   overflow-y: auto;
+    width: 98%;
+    
+    height: 98%;
+    border: 0.5px solid #cdcdcd; 
+    border-radius: 8px;
+    margin: 1%;
+}
+ ::-webkit-scrollbar {
+             display: none;
+        } 
+
+table,
+        td {
+            /*width: 100%;
+            height: 20%;*/
+            border-top: 1px solid #cdcdcd;
+            border-right: 1px solid #cdcdcd;
+            border-collapse: collapse;
+            padding: 5px;            
+            text-align: center;
+        }
+        
+        th {
+                background: #00A982;
+                height: 8%;
+                color: white;
+                border-right: 1px solid grey;
+                padding: 5px;
+               
+                text-align: center !important;
+                font-size: 11px;
+        }
+        
+        table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+
+body {
+  font-family: "HP Simplified", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "HP Simplified", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* embedded font for when it isn't installed */
+@font-face {font-family: 'HP Simplified';
+  src: url('fonts/HPSimplified_Rg.eot');
+  src: url('fonts/HPSimplified_Rg.eot?#iefix') format('embedded-opentype'),
+  local('HP Simplified Regular'), url('fonts/HPSimplified_Rg.ttf') format('truetype');
+  }
+@font-face {font-family: 'HP Simplified';
+  src: url('fonts/HPSimplified_Bd.eot');
+  src: url('fonts/HPSimplified_Bd.eot?#iefix') format('embedded-opentype'),
+  local('HP Simplified Bold'), url('fonts/HPSimplified_Bd.ttf') format('truetype');
+  font-weight: bold;
+  }
+@font-face {font-family: 'HP Simplified';
+  src: url('fonts/HPSimplified_It.eot');
+  src: url('fonts/HPSimplified_It.eot?#iefix') format('embedded-opentype'),
+  local('HP Simplified Italic'), url('fonts/HPSimplified_It.ttf') format('truetype');
+  font-style: italic;
+  }
+@font-face {font-family: 'HP Simplified';
+  src: url('fonts/HPSimplified_BdIt.eot');
+  src: url('fonts/HPSimplified_BdIt.eot?#iefix') format('embedded-opentype'),
+  local('HP Simplified Bold Italic'), url('fonts/HPSimplified_BdIt.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  }

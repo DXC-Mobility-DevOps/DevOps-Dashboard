@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>HPE Mobility DevOps</title>
+  <link rel="stylesheet" href="css/login-style.css">
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+  <script src="lib/angular-route.js"></script>
+  <script src="lib/angular-animate.min.js"></script>
+  <script src="lib/angular-resource.min.js"></script>
+  <script src="lib/ui-bootstrap-tpls-0.12.0.js"></script>
+  <script src="lib/jquery.min.js"></script>
+  <!--<script type="text/javascript" src="lib/jquery.ajax-cross-origin.min.js"></script>-->
+
+  <script src="lib/angular-nvd3.js"></script>
+  <link rel="stylesheet" href="lib/nv.d3.min.css" />
+  <script src="lib/d3.min.js" charset="utf-8"></script>
+  <script src="lib/nv.d3.min.js"></script>
+  <script src="lib/angular-nvd3.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/angular-sanitize.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/loginController.js"></script>
+
+</head>
+
+<body>
+
+
+  <div class="container">
+
+
+    <div id="login">
+
+      <form ng-app="formApp" ng-controller="LoginCtrl">
+
+        <fieldset class="clearfix">
+
+          <p><span class="fontawesome-user"></span><input type="text" ng-model="user" required></p>
+          <p><span class="fontawesome-lock"></span><input type="password" ng-model="password" required></p>
+          <p ng-click="doLogin();"><input type="submit" value="Sign In" /> </p>
+
+        </fieldset>
+
+      </form>
+
+
+    </div>
+    <!-- end login -->
+
+  </div>
+  <div class="bottom"> </div>
+
+
+</body>
+
+</html>

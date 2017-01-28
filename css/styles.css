@@ -1,0 +1,493 @@
+h1.page-header {
+    margin-top: -5px;
+}
+
+.sidebar {
+    padding-left: 0;
+}
+
+.main-container {
+    background: #FFF;
+    padding-top: 15px;
+    margin-top: -20px;
+}
+
+.footer {
+    width: 100%;
+}
+
+.icon-style{
+
+    color:#202d3b;
+    margin-right: 5px;
+
+}
+
+.center{
+    text-align: center;
+}
+
+.step .col-md-2:hover {
+    color: #00A982;
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 100px; /* Set the size of the progress bar */
+    height: 100px;
+    position: absolute; /* Enable clipping */
+    clip: rect(0px, 100px, 100px, 50px); /* Hide half of the progress bar */
+}
+/* Set the sizes of the elements that make up the progress bar */
+
+
+/* Use a wide full screen for small screens like tablets. */
+@media (min-width: 768px) and (max-width:992px) {
+    .container {
+        width: initial;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+/* --- Plans ---------------------------- */
+
+.my_planHeader {
+    text-align: center;
+    color: white;
+    padding-top:0.2em;
+    padding-bottom:0.2em;
+}
+.my_planTitle {
+    font-size:2em;
+    font-weight: bold;
+}
+.my_planPrice {
+    font-size:1.4em;
+    font-weight: bold;
+}
+.my_planDuration {
+    margin-top: -0.6em;
+}
+
+@media (max-width: 768px) {
+    .my_planTitle {
+        font-size:small;
+    }
+}
+
+/* --- Features ------------------------- */
+
+.my_feature {
+    line-height:2.8em;
+}
+
+@media (max-width: 768px) {
+    .my_feature {
+        text-align: center
+    }
+}
+
+.my_featureRow {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    border: 0.1em solid rgb(163, 163, 163);
+}
+
+/* --- Plan 1 --------------------------- */
+.my_plan1 {
+    background: rgb(224,234,242);
+}
+
+.my_planHeader.my_plan1 a {
+    background: rgb(72, 109, 139);
+    color:white;
+}
+
+.my_planHeader.my_plan1 {
+    background: rgb(105, 153, 193);
+    border-bottom: thick solid rgb(72, 109, 139);
+}
+
+/* --- Plan 2 --------------------------- */
+.my_plan2 {
+    background: rgb(230,235,218);
+}
+
+.my_planHeader.my_plan2 a {
+    background: rgb(108, 131, 62);
+    color:white;
+}
+
+.my_planHeader.my_plan2 {
+    background: rgb(134, 162, 77);
+    border-bottom: thick solid rgb(108, 131, 62);
+}
+
+/* --- Plan 3 --------------------------- */
+.my_plan3 {
+    background: rgb(254,235,212);
+}
+
+.my_planHeader.my_plan3 a {
+    background: rgb(199, 127, 40);
+    color:white;
+}
+
+.my_planHeader.my_plan3 {
+    background: rgb(253, 161, 49);
+    border-bottom: thick solid rgb(199, 127, 40);
+}
+
+
+
+
+.my_planFeature {
+    text-align: center;
+    font-size: 2em;
+}
+
+.my_planFeature i.my_check {
+    color: green;
+}
+
+
+.active a {
+    background-color: #00A982 !important;
+}
+
+.chartContainer {
+    width: 48%;
+    height: 48%;
+    border: 0.5px solid #cdcdcd;
+    float: left;
+    border-radius: 8px;
+    margin: 5px;
+    background: white;    
+}
+
+.reportContainer {
+    width: 45%;
+    height: 48%;
+    border: 0.5px solid #cdcdcd;
+    float: left;
+    border-radius: 8px;
+    margin: 5px;
+    background: white;    
+}
+.buildStatusContainer {
+    width: 50%;
+    height: 97.5%;
+    border: 0.5px solid #cdcdcd;
+    float: left;
+    border-radius: 8px;
+    margin: 5px;
+    background: white;   
+    margin-left: 2%; 
+}
+
+html, body {
+      width: 100%;
+      height: 100%;
+      background: white;
+      margin:0;
+      padding:0;
+    }
+
+.subheading {
+    background: #fcfcfc;
+    height: 12%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    line-height: 37px;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: bold;
+    border-bottom: 0.5px solid #cdcdcd;
+}
+.subselection {
+    line-height: 48px;   
+    height: 17%;
+    padding-left: 3%;
+    padding-right: 3%;  
+}
+.chartArea {
+    height: 72%;   
+    margin: 0px !important;
+    /*padding: 2%;*/
+}
+
+.chartAreaFile {
+    height: 100%;   
+    margin: 0px !important;
+    padding: 2%;
+    width: 41.5%;    
+    float: left;    
+    padding-left: 7%;
+    padding-top: 25px;
+}
+
+.deviceTitle {
+    padding-bottom: 4px;
+    margin-bottom: 0px;
+    margin-top: 5%;
+    background: #fcfcfc;
+    height: 12%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    line-height: 37px;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: bold;
+    border-bottom: 0.5px solid #cdcdcd;
+}
+
+.deviceSubTitle {
+    color: grey;
+    background: #fcfcfc;
+    height: 12%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    line-height: 37px;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: bold;
+    border-bottom: 0.5px solid #cdcdcd;
+}
+
+.numberlist{
+    /*width:inherit;*/
+    
+    height: 93%;
+    padding: 5%;
+}
+
+.numberlist ol{
+
+                counter-reset: li;
+
+                list-style: none;
+
+                *list-style: decimal;
+
+                font: 15px 'trebuchet MS', 'lucida sans';
+
+                padding: 0;
+
+                margin-bottom: 4em;
+
+ 
+
+}
+
+.numberlist ol ol{
+
+                margin: 0 0 0 2em;
+
+            }
+
+ 
+
+.numberlist #taga{
+
+                position: relative;
+
+                display: block;
+
+                padding: .4em .4em .4em 2em;
+
+                *padding: .4em;
+
+                margin: .5em 0;
+
+                background: #fcfcfc;
+
+                color: #444;
+
+                text-decoration: none;
+
+                -moz-border-radius: .3em;
+
+                -webkit-border-radius: .3em;
+
+                border-radius: .3em;
+
+            }
+
+ 
+
+.numberlist #taga:hover{
+
+                background: #cbe7f8;
+
+                text-decoration:underline;
+
+            }
+
+.numberlist #taga:before{
+
+                content: counter(li);
+
+                counter-increment: li;
+
+                position: absolute;
+
+                left: -1.3em;
+
+                top: 50%;
+
+                margin-top: -1.3em;
+
+                background: #87ceeb;
+
+                height: 2em;
+
+                width: 2em;
+
+                line-height: 2em;
+
+                border: .3em solid #fff;
+
+                text-align: center;
+
+                font-weight: bold;
+
+                -moz-border-radius: 2em;
+
+                -webkit-border-radius: 2em;
+
+                border-radius: 2em;
+
+                color:#FFF;
+
+            }
+
+ 
+
+/* End css list with numeber circle background -------------- */
+
+.widget {
+    margin: 0 auto;
+    width:100%;
+    height:100%;   
+    background-color:#fff;
+    -background-color: #222D3A;
+    
+
+}
+
+.chart-container{
+    /*padding:25px;*/
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.fileText{
+    color: grey;
+}
+.fileTextNumber{
+    color: black;
+    font-weight: bold;
+}
+.digitDisplay{
+    font-size: 45px;
+    text-shadow: 2px 2px #cdcdcd;
+}
+
+.roundedRectDefault {
+    border-radius: 4px;
+    background: #afbd9c;
+    color: white !important;
+    height: 42px;
+    padding: 12px;
+    padding-left: 15px;  
+}
+.roundedRectClick {
+    border-radius: 4px;
+    background: #00A982;
+    color: white !important;
+    height: 42px;
+    padding: 12px;
+    padding-left: 15px;  
+}
+#bar {
+    width:0px;
+    height:25px;
+    border:1px solid #cdcdcd;
+    background-color:#ffc679;
+    border-radius:3px;
+}
+
+s:hover {
+    background-color: #ffc679;
+} 
+.progressDiv{
+    display: inline-block;
+    width: 15%;
+    height: 40px;    
+    text-align: center;
+    padding-top: 8px;
+
+}
+.progress1{
+ background: #F78181;
+}
+.progress2{
+    background: #F79F81;
+}
+.progress3{
+    background: #FAAC58;
+}
+.progress4{
+ background: #F4FA58;
+}
+.progress5{
+    background: lightgreen;
+}
+.progress6{
+    background: #ACFA58;
+}
+
+.progress1dark{
+ background: #FE2E2E;
+ color: white;
+}
+.progress2dark{
+    background: #FE642E;
+    color: white;
+}
+.progress3dark{
+    background: #FA8258;
+    color: white;
+}
+.progress4dark{
+ background: #FF8000;
+ color: white;
+}
+.progress5dark{
+    background: #74DF00;
+    color: white;
+}
+.progress6dark{
+    background: #5CB85C;
+    color: white;
+}
+.buildButtonStyle{
+    float: right; 
+    margin-top: 20px; 
+    margin-bottom: -10px;    
+    padding-left: 20px; 
+    background:#00A982 ;   
+     /*background:#62A0CA ;    */
+    width: 80%;
+    padding-right: 20px;
+}
+
+
+
+
+
