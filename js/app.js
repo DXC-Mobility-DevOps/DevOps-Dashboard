@@ -1,4 +1,4 @@
-var app = angular.module('formApp', ['nvd3', 'ngResource'])
+var app = angular.module('formApp', ['nvd3', 'ngResource','percentCircle-directive'])
     .constant('CONF', {
         baseUrl: 'http://35.162.132.98:8082',
         loginEndPoint: 'http://35.162.132.98:8082/DevOpsServer/user/v01/isAuthenticated/',

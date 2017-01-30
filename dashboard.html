@@ -37,6 +37,11 @@
 
   <!--<link rel="stylesheet" href="css/united.css">-->
 
+  <!-- Graph -->
+
+  <link rel="stylesheet" type="text/css" href="lib/percent-circle.css">
+  <script src="lib/percent-circle-directive.js" type="text/javascript"></script> 
+
 
 </head>
 
@@ -50,7 +55,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <div style="color:#01A982; font-weight:bold;"><br/>Mobile DevOps</div>
-            <div style="color: #ffffff; font-size:12px;">enabled by Hewlett Packard Enterpise</div>
+            <!-- <div style="color: #ffffff; font-size:12px;">enabled by Hewlett Packard Enterpise</div> -->
 
           </ul>
         </div>
@@ -146,9 +151,11 @@
           
           <div style="float: left; width: 70%;" class="equalVertical">
             <p>Health Report <span class="fileTextNumber"> </br> {{ projectStatus.healthReport }} &nbsp;&nbsp;&nbsp;</span> </p>
+            <p>Health Score <span class="fileTextNumber"> </br> {{ projectStatus.healthReportScore }}%</span></p>
            
           </div>
-           <div   id="circle" ng-init="healthReport();"></div>
+           <div style="float: left; width: 30%; height:30%;" class="equalVertical" ><percent-circle percent="projectStatus.healthReportScore"></percent-circle></div>
+            <!-- <div   id="circle" ng-init="healthReport();"><percent-circle percent="projectStatus.healthReportScore"></percent-circle></div> -->
         </div>
 
       </div>
@@ -161,8 +168,9 @@
     {{ projectStatus }}
   </div>
 
+
   <!--MANUAL UI/UX TEST-->
-  <div class="div4" style="margin-right: 0px">
+ <!--  <div class="div4" style="margin-right: 0px">
     <div style="">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="progressDiv progress1" ng-class="progressTimer >=1 ? 'progress1dark' : 'progress1'" ng-click="handleBuildClick(0);">START</div>
       <div class="progressDiv progress2" ng-class="progressTimer >=2 ? 'progress2dark' : 'progress2'" ng-click="handleBuildClick(1);">BUILD</div>
@@ -172,7 +180,7 @@
       <div class="progressDiv progress6" ng-class="progressTimer >=6 ? 'progress6dark' : 'progress6'" ng-click="handleBuildClick(5); ">SUCCESS</div>
     </div>
   </div>
-
+ -->
 </body>
 
 </html>

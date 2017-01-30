@@ -9,7 +9,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
   $scope.headers = ["Project", "Status", "Version", "Build Date", "Code Coverage", "Trigger Build"];
   $scope.INTERVAL = 10000;
   $scope.autoSelect = 0;
-  $scope.projectStatus  = {};
+  $scope.projectStatus = {};
 
   $scope.fetchDashboardData = function () {
     console.log("fetchDashboardData");
@@ -100,6 +100,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
       }, function (data) {
         $scope.projectStatus = {
           healthReport: data.healthReport[0].description,
+          healthReportScore: data.healthReport[0].score,
           lastCompletedBuild: data.lastCompletedBuild,
           lastFailedBuild: data.lastFailedBuild,
           lastStableBuild: data.lastStableBuild,
@@ -125,26 +126,31 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
   // $scope.getProjectStatus("HPEIoT");
 
   function startAutoSelect() {
-    console.log("timer up" + $scope.autoSelect + "  project name : " + $rootScope.projectList[$scope.autoSelect].Project_name);
-    $scope.getProjectBuildDetails($rootScope.projectList[$scope.autoSelect].Project_name);
-    $scope.renderChart();
-    if ($scope.autoSelect < $scope.maxSelect) {
-      $timeout(startAutoSelect, $scope.INTERVAL);
-    }
     $scope.autoSelect = $scope.autoSelect + 1;
     console.log("timer up" + $scope.autoSelect);
     if ($scope.autoSelect >= $scope.maxSelect) {
       $scope.autoSelect = 0;
     }
+    console.log("timer up" + $scope.autoSelect + "  project name : " + $rootScope.projectList[$scope.autoSelect].Project_name);
+    $scope.getProjectBuildDetails($rootScope.projectList[$scope.autoSelect].Project_name);
+    $scope.renderChart($rootScope.projectList[$scope.autoSelect].Code_coverage);
+    //$scope.healthReport($scope.projectStatus.healthReportScore);
+    if ($scope.autoSelect < $scope.maxSelect) {
+      $timeout(startAutoSelect, $scope.INTERVAL);
+    }
+
   }
 
   $scope.startAutoSelectSub = function () {
-    $timeout(startAutoSelect, 0);
+    $scope.getProjectBuildDetails($rootScope.projectList[$scope.autoSelect].Project_name);
+    $scope.renderChart($rootScope.projectList[$scope.autoSelect].Code_coverage);
+    //$scope.healthReport($scope.projectStatus.healthReportScore);
+    $timeout(startAutoSelect, $scope.INTERVAL);
   };
 
-  $scope.healthReport = function () {
+  $scope.healthReport = function (score) {
     $('#circle').circleProgress({
-      value: 0.75,
+      value: score * 0.01,
       size: 80,
       fill: {
         gradient: ["red", "orange"]
@@ -248,10 +254,11 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
 
 
 
-  $scope.renderChart = function () {
+  $scope.renderChart = function (value) {
 
 
-    var qualityIndex = parseFloat($rootScope.projectList[$scope.autoSelect].Code_coverage);  //$scope.sonarReport[1].percentage;
+    var qualityIndex = parseFloat(value);  //$scope.sonarReport[1].percentage;
+    console.log("code coverage  :" + qualityIndex);
 
     $(function () {
 
@@ -335,7 +342,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           dataLabels: {
             format: '<div style="text-align:center"><span style="font-size:25px;color:' +
             ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-            '<span style="font-size:9px;color:#696969">SonarCodeCoverage</span></div>'
+            '<span style="font-size:9px;color:#696969">Code Coverage</span></div>'
           },
           tooltip: {
             valueSuffix: ' %'
