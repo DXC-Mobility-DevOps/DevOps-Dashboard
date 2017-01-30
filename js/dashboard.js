@@ -108,6 +108,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           lastUnstableBuild: data.lastUnstableBuild,
           lastUnsuccessfulBuild: data.lastUnsuccessfulBuild,
 
+          triggeredBy: $scope.lastBuildDetails.actions[0].causes[0].shortDescription,
           buildURL: $scope.lastBuildDetails.url,
           commitComment: $scope.lastBuildDetails.changeSet.items[0].comment,
           commitDate: $scope.lastBuildDetails.changeSet.items[0].date,
