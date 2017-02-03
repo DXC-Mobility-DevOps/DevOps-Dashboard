@@ -1,10 +1,10 @@
 var app = angular.module('formApp', ['nvd3', 'ngResource','percentCircle-directive'])
     .constant('CONF', {
-        baseUrl: 'http://35.162.132.98:8082',
-        loginEndPoint: 'http://35.162.132.98:8082/DevOpsServer/user/v01/isAuthenticated/',
-        getJenkinJobList: 'http://35.162.132.98:8080/api/json?pretty=true',
-        getSonarCodeCoverage: 'http://35.162.132.98:9000/api/resources?metrics=coverage',
-        detailedProjectStatus: 'http://35.162.132.98:8080/job/'
+        baseUrl: 'http://16.181.234.214:8082',
+        loginEndPoint: 'http://16.181.234.214:8082/DevOpsServer/user/v01/isAuthenticated/',
+        getJenkinJobList: 'http://16.181.234.214:8080/api/json?pretty=true',
+        getSonarCodeCoverage: 'http://16.181.234.214:9000/api/resources?metrics=coverage',
+        detailedProjectStatus: 'http://16.181.234.214:8080/job/'
     })
     .service('Webservice', ['$resource', 'CONF', '$http',
         function Webservice($resource, CONF, $http) {
@@ -18,7 +18,7 @@ var app = angular.module('formApp', ['nvd3', 'ngResource','percentCircle-directi
                     $http({
                         method: inputArray.type,
                         url: inputArray.url
-                        //headers: { "crossOrigin": true } 
+                        //headers: { "crossOrigin": true }
                     })     // HTTP Method
                         .success(function (data) {
                             if (data == undefined) {
@@ -38,8 +38,8 @@ var app = angular.module('formApp', ['nvd3', 'ngResource','percentCircle-directi
                     $http({
                         method: 'POST',
                         url: inputArray.url
-                        //crossOrigin: true 
-                        //data: this.inputPayload, 
+                        //crossOrigin: true
+                        //data: this.inputPayload,
 
                     })
                         .success(function (result_data) {
