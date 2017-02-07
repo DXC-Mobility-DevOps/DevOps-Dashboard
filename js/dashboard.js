@@ -112,7 +112,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           buildURL: $scope.lastBuildDetails.url,
           commitComment: $scope.lastBuildDetails.changeSet.items[0].comment,
           commitDate: $scope.lastBuildDetails.changeSet.items[0].date,
-          fileChanges: '',
+          fileChanges: $scope.lastBuildDetails.changeSet.items[0].affectedPaths,
           versionName: '',
           buildDate: $scope.lastBuildDetails.builtOn,
           authorName: $scope.lastBuildDetails.changeSet.items[0].author.fullName,
