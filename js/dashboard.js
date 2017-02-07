@@ -31,6 +31,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           var index = $scope.sonarResponse.indexOf($scope.sonarResponse.filter(function (item) {
             return item.key == $scope.jenkinResponse.jobs[i].name
           })[0]);
+          console.log("index >>> " + index + "   jobname : " + $scope.jenkinResponse.jobs[i].name);
           var color = '';
           if ($scope.jenkinResponse.jobs[i].color === 'blue') {
             color = 'success';
