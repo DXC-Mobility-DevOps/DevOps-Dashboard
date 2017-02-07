@@ -31,7 +31,6 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           var index = $scope.sonarResponse.indexOf($scope.sonarResponse.filter(function (item) {
             return item.key == $scope.jenkinResponse.jobs[i].name
           })[0]);
-          // console.log("index >>> " + index);
           var color = '';
           if ($scope.jenkinResponse.jobs[i].color === 'blue') {
             color = 'success';
@@ -42,13 +41,24 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           } else {
             color = 'aborted';
           }
-          $rootScope.projectList.push({
-            Project_name: $scope.jenkinResponse.jobs[i].name,
-            Status: color,
-            Version_number: $scope.sonarResponse[index].version,
-            Build_date: $scope.sonarResponse[index].date,
-            Code_coverage: $scope.sonarResponse[index].msr[0].val
-          });
+          if (index < 0) {
+            // $rootScope.projectList.push({
+            //   Project_name: $scope.jenkinResponse.jobs[i].name,
+            //   Status: color,
+            //   Version_number: '',
+            //   Build_date: '',
+            //   Code_coverage: ''
+            // });
+          } else {
+            $rootScope.projectList.push({
+              Project_name: $scope.jenkinResponse.jobs[i].name,
+              Status: color,
+              Version_number: $scope.sonarResponse[index].version,
+              Build_date: $scope.sonarResponse[index].date,
+              Code_coverage: $scope.sonarResponse[index].msr[0].val
+            });
+          }
+
         }
         console.log($rootScope.projectList);
         $scope.autoSelect = 0;
