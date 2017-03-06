@@ -54,7 +54,7 @@
             <img src="img/hpe-logo-white.png" />
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <div style="color:#01A982; font-weight:bold;"><br/>Mobile DevOps</div>
+            <div style="color:#FFFFFF;font-size: 18px; font-weight:bold; padding-right: 10px;"><br/>Mobile DevOps</div>
             <!-- <div style="color: #ffffff; font-size:12px;">enabled by Hewlett Packard Enterpise</div> -->
 
           </ul>
@@ -68,7 +68,7 @@
     <div class="tableOuter">
       <table style="width: 100%;    height: 100%;">
         <th ng-repeat="header in headers" style="height:50px;">
-          <a style="color:white;">  {{headers[$index] | uppercase}} </a>
+          <a style="color:white; font-size: 14px;">  {{headers[$index] | uppercase}} </a>
         </th>
         <tr ng-repeat="item in projectList" style="height:60px;" ng-class="autoSelect == $index ? 'tableSelect' : 'tableDefault'">
           <td style="width:20%;">{{ item.Project_name }}</td>
@@ -165,7 +165,7 @@
 
   <!--RECENT ACTIVITY-->
   <div class="div3">
-    {{ projectStatus }}
+   <!--  {{ projectStatus }} -->
   </div>
 
 
