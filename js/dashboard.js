@@ -6,7 +6,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
   // .then(function (response) {$scope.names = response.data.records;});
 
   $rootScope.projectList = [];
-  $scope.headers = ["Project", "Status", "Version", "Build Date", "Code Coverage", "Trigger Build"];
+  $scope.headers = ["Project", "Status", "Version", "OS" , "Build Date", "Code Coverage", "Trigger Build"];
   $scope.INTERVAL = 10000;
   $scope.autoSelect = 0;
   $scope.projectStatus = {};
@@ -55,6 +55,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
               Project_name: $scope.jenkinResponse.jobs[i].name,
               Status: color,
               Version_number: $scope.sonarResponse[index].version,
+              Os:"Android",
               Build_date: $scope.sonarResponse[index].date,
               Code_coverage: $scope.sonarResponse[index].msr[0].val
             });
