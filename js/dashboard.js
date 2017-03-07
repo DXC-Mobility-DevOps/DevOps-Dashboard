@@ -354,7 +354,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           dataLabels: {
             format: '<div style="text-align:center"><span style="font-size:25px;color:' +
             ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-            '<span style="font-size:9px;color:#696969">Code Coverage</span></div>'
+            '<span style="font-size:9px;color:#696969">Code Coverage (%)</span></div>'
           },
           tooltip: {
             valueSuffix: ' %'
