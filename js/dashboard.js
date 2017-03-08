@@ -6,7 +6,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
   // .then(function (response) {$scope.names = response.data.records;});
 
   $rootScope.projectList = [];
-  $scope.headers = ["Project", "Status", "Version", "OS" , "Build Date", "Code Coverage", "Trigger Build"];
+  $scope.headers = ["Project", "Status", "Version", "OS", "Build Date", "Code Coverage", "Trigger Build"];
   $scope.INTERVAL = 10000;
   $scope.autoSelect = 0;
   $scope.projectStatus = {};
@@ -55,7 +55,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
               Project_name: $scope.jenkinResponse.jobs[i].name,
               Status: color,
               Version_number: $scope.sonarResponse[index].version,
-              Os:"Android",
+              Os: "Android",
               Build_date: $scope.sonarResponse[index].date,
               Code_coverage: $scope.sonarResponse[index].msr[0].val
             });
@@ -97,6 +97,16 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
   //   });
   // };
 
+  $scope.hasProperty = function (json, key) {
+    var status = false;
+    json = JSON.stringify(json);
+    if (json.includes (key)) {
+      status = true;
+    }
+    console.log("Json contains "+key + "  :"+status);
+    return status;
+  };
+
   $scope.getProjectBuildDetails = function (projectName) {
     console.log("getProjectStatus :" + projectName);
     Webservice.getData({
@@ -105,11 +115,13 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
       input: []
     }, function (data) {
       $scope.lastBuildDetails = data;
+      console.log(data);
       Webservice.getData({
         url: CONF.detailedProjectStatus + projectName + "/api/json",
         type: 'GET',
         input: []
       }, function (data) {
+        console.log(data);
         $scope.projectStatus = {
           healthReport: data.healthReport[0].description,
           healthReportScore: data.healthReport[0].score,
@@ -122,15 +134,17 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
 
           triggeredBy: $scope.lastBuildDetails.actions[0].causes[0].shortDescription,
           buildURL: $scope.lastBuildDetails.url,
-          commitComment: $scope.lastBuildDetails.changeSet.items[0].comment,
-          commitDate: $scope.lastBuildDetails.changeSet.items[0].date,
-          fileChanges: $scope.lastBuildDetails.changeSet.items[0].affectedPaths,
+          commitComment: $scope.hasProperty($scope.lastBuildDetails , "comment") ?  $scope.lastBuildDetails.changeSet.items[0].comment : "",
+          commitDate: $scope.hasProperty($scope.lastBuildDetails , "date") ? $scope.lastBuildDetails.changeSet.items[0].date : "",
+          fileChanges: $scope.hasProperty($scope.lastBuildDetails , "affectedPaths") ? $scope.lastBuildDetails.changeSet.items[0].affectedPaths : "",
           versionName: '',
           buildDate: $scope.lastBuildDetails.builtOn,
           authorName: $scope.lastBuildDetails.changeSet.items[0].author.fullName,
           authorEmail: $scope.lastBuildDetails.changeSet.items[0].authorEmail
+          authorName: $scope.hasProperty($scope.lastBuildDetails , "author") ? $scope.lastBuildDetails.changeSet.items[0].author.fullName : "",
+          authorEmail: $scope.hasProperty($scope.lastBuildDetails , "authorEmail") ?$scope.lastBuildDetails.changeSet.items[0].authorEmail : ""
         }
-        console.log($scope.projectStatus);
+        //console.log($scope.projectStatus);
         //$scope.$digest();
 
       });
