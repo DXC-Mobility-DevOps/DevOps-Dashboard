@@ -139,8 +139,6 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
           fileChanges: $scope.hasProperty($scope.lastBuildDetails , "affectedPaths") ? $scope.lastBuildDetails.changeSet.items[0].affectedPaths : "",
           versionName: '',
           buildDate: $scope.lastBuildDetails.builtOn,
-          authorName: $scope.lastBuildDetails.changeSet.items[0].author.fullName,
-          authorEmail: $scope.lastBuildDetails.changeSet.items[0].authorEmail
           authorName: $scope.hasProperty($scope.lastBuildDetails , "author") ? $scope.lastBuildDetails.changeSet.items[0].author.fullName : "",
           authorEmail: $scope.hasProperty($scope.lastBuildDetails , "authorEmail") ?$scope.lastBuildDetails.changeSet.items[0].authorEmail : ""
         }
