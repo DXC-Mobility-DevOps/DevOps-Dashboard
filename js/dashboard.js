@@ -4,6 +4,7 @@ app.controller('DashboardCtrl', ['$scope', '$rootScope', 'CONF', 'Webservice', '
 
   //  $http.get("http://www.w3schools.com/angular/customers.php")
   // .then(function (response) {$scope.names = response.data.records;});
+  //dummy code
 
   $rootScope.projectList = [];
   $scope.headers = ["Project", "Status", "Version", "OS", "Build Date", "Code Coverage", "Trigger Build"];
