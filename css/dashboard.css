@@ -92,7 +92,7 @@ html, body {
 }
 
 .tableSelect{
- background-color: lightgreen !important;
+ background-color: #D1D1D1 !important;
 }
 .tableDefault{
  background-color: transparent;
@@ -138,7 +138,7 @@ table,
         }
         
         th {
-                background: #00A982;
+                background: #7e7b7b;
                 height: 8%;
                 color: white;
                 border-right: 1px solid grey;
